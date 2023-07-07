@@ -1,0 +1,536 @@
+/* GENERAL/OVERALL */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} 
+
+body{
+  margin: 0;
+}
+
+button{
+  border: 1px solid #090707;
+  border-radius: 5px;
+}
+
+.button{
+  background-color: #d9d9d9;
+  color: black;
+  font-size: 15px;
+  padding: 8px 15px;
+  transition: 0.5s ease;
+}
+
+.button:hover{
+  background-color: red;
+}
+
+/* HEADER */
+.header{
+  padding: 250px 0px;
+  padding-top: 275px;
+  width: 100%;
+  background-image: url("Pictures/bg3.png");
+  background-size: cover;
+  text-align: center;
+}
+
+
+
+#title{
+  font-size: 65px;
+  padding: 20px;
+  color: #ff1414;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  animation: glowText 3s ease-in;
+  text-shadow: 1px 1px 2px black, 0 0 10px #f5b8ad, 0 0 5px #f57070;
+}
+
+@keyframes glowText{
+  0% {text-shadow: none}
+  50%, 70% {text-shadow: 1px 1px 1px black, 0 0 25px #ffffff, 0 0 5px #ffffff;}
+  100% {text-shadow: 1px 1px 2px black, 0 0 15px #ff9494, 0 0 5px #f7c3ba;}
+}
+
+.char{
+  transform: translateY(110px);
+  transition: transform .4s;
+}
+
+.subtitle{
+  color: #ffffff;
+  font-size: 25px;
+  max-width: 55%;
+  margin: 0% 20%;
+  animation: subFade 5s;
+  text-shadow: -2px 2px 0 #000,
+				  2px 2px 0 #000,
+				 2px -2px 0 #000,
+				-2px -2px 0 #000;
+  line-height: 1.5;
+}
+
+@keyframes subFade{
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;} 
+}
+
+
+/* NAVAGATION BAR */
+.logo{
+  width: 110px;
+  height: 40px;
+  border: 1px solid transparent;
+  padding-right: 10px;
+}
+
+/* Responsive: https://www.youtube.com/watch?v=6pidsgeLLzE */
+nav{
+  z-index: 1;
+  background: #2c2a2a;
+  padding: 5px 20px;
+  position: fixed;
+  width: 100%
+}
+
+ul{
+  list-style-type: none;
+}
+
+li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  font-size: 19px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+li a:hover{
+  color: #f90606;
+  text-decoration: line-through;
+}
+
+.navbar li{
+  font-size: 16px;
+  padding: 10px 5px;
+}
+
+.navbar li a{
+  display: block;
+}
+
+/* Moblie Menu */
+.navbar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle{
+  order:1;
+}
+
+.item{
+  width: 100%;
+  text-align: center;
+  order: 2;
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.toggle{
+  cursor: pointer;
+}
+
+.bars{
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 18px;
+}
+
+.bars::before, .bars::after{
+  background: #999;
+  content:"";
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  width: 18px;
+}
+
+.bars::before{
+  top: 5px;
+}
+.bars::after{
+  top: -5px;
+}
+
+@media all and (min-width: 768px){
+  .item{
+    display: block;
+    width: auto;
+  }
+  .toggle{
+    display: none;
+  }
+  .navbar li{
+    padding: 10px 10px;
+  }
+}
+
+
+/* SECTION TITLES*/
+.secTitle{ 
+  text-align: center;
+  border-bottom: 9px solid darkred;
+  border-top: 9px solid darkred;
+}
+
+.sectHeaders{
+  font-size: 40px;
+  padding: 20px;
+}
+
+/* ABOUT ME SECTION */
+.abtContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abtText{
+  padding: 25px;
+  line-height: 1.5;
+  max-width: 60%;
+  float: right;
+}
+
+.abtImage{
+  float: left;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .abtContent{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .abtText{
+    max-width: 100%;
+  }
+}
+
+/* EXPERIENCE SECTION */
+.compInfo{
+  padding: 20px;
+}
+
+.company{
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.compDesc{
+  line-height: 1.5;
+}
+
+.expContent{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.expBars{
+  width: 45%;
+  padding: 10px;
+}
+
+#nextBefore{
+  width: 100px;
+}
+
+#nextAfter{
+  width: 100px;
+}
+
+/* Skill Bars: https://www.w3schools.com/howto/howto_css_skill_bar.asp */
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.html {width: 1%; background-color: #04AA6D;}
+.css {width: 1%; background-color: #2196F3;}
+.js {width: 1%; background-color: #f44336}
+.python {width: 70%; background-color: #f5d329;}
+
+.htmlAnimate{
+  animation: aniHtml 3s;
+}
+@keyframes aniHtml{
+  from {width: 1%}
+  to {width: 40%}
+}
+
+.cssAnimate{
+  animation: aniCss 3s;
+}
+@keyframes aniCss{
+  from {width: 1%}
+  to {width: 30%}
+}
+
+.jsAnimate{
+  animation: aniJs 3s;
+}
+@keyframes aniJs{
+  from {width: 1%}
+  to {width: 35%}
+}
+
+.pythonAnimate{
+  animation: aniPython 3s;
+}
+@keyframes aniPython{
+  from {width: 1%}
+  to {width: 70%}
+}
+
+.expDesc{
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 700px){
+  .expBars{
+    width: 100%;
+  }
+
+  .expContent{
+    flex-direction: column-reverse;
+  }
+}
+
+
+/* HOBBIES */
+.hobContent{
+  display: grid;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+/* PROJECT SECTION */ 
+/*Source: https://www.w3schools.com/howto/howto_css_image_gallery.asp*/
+
+.photos{
+  text-align: center;
+}
+
+.btn{
+  text-align: center;
+}
+
+div.gallery {
+  margin: 4%;
+}
+
+div.gallery:hover {
+  border: 2px solid black;
+  opacity: 80%;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  display: none;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 50%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* CONTACTS SECTION */ 
+.contactInfo{
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  column-gap: inherit;
+}
+
+.textBox{
+  font-size: 14px;
+  align-items: center;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.space{
+  padding-bottom: 15px;
+}
+
+#name{
+  grid-column-start: 1;
+}
+
+#email{
+  grid-column-start: 1;
+}
+
+#phone{
+  grid-column-start: 1;
+}
+
+#message{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding-top: 10px;
+  border: 2px solid black;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  height: 100%;
+}
+
+/* FOOTER */
+footer{
+  bottom: 0;
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #2c2a2a;
+  color: whitesmoke;
+  padding-left: 5%;
+  width: 100%;
+  padding: 15px;
+}
+
+.icons{
+  display: flex;
+  float: left;
+  border: 1px solid transparent;
+}
+
+#github{
+  border: 1px solid transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#github:hover{
+  transform: scale(1.3);
+}
+
+#linkedIn{
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+#linkedIn:hover{
+  transform: scale(1.3);
+}
+  
+.links{
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#iconCred{
+  padding-top: 15px;
+}
+
+#webCreator{
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SPLASH SCREEN */
+/* .splashScreen {
+  position: absolute;
+  z-index: 2;
+  animation: fadeInAnimation ease 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-image: url("https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGl0Y2glMjBibGFja3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+  background-size: cover;
+} */
+ 
+/* @keyframes fadeInAnimation {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+  100% {visibility: hidden;}
+}  */
